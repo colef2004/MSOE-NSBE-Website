@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MSOE NSBE | Home</title>
     <link rel="stylesheet" href="style.css">
+    <script src="function.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- Navigation Bar -->
 <div id="topButtons">
-    <button type="button">Home</button>
-    <button type="button">Points</button>
-    <button type="button">About</button>
-    <button type="button">Contact</button>
+    <div class="title">
+        <p>NSBE</p>
+        <p>Milwaukee School of Engineering University</p>
+    </div>
+    <div>
+        <button type="button" onclick="navigateTo('home.html')">Home</button>
+        <button type="button" onclick="navigateTo('table.html')">Points</button>
+        <button type="button" onclick="navigateTo('aboutPage.html')">About</button>
+        <button type="button">Contact</button>
+    </div>
 </div>
 
 <!-- Main Content -->

@@ -4,7 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Point System Table</title>
+  <script src="function.js"></script>
   <style>
+    /* Navigation Bar */
+    #topButtons {
+      background-color: #12663b;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    #topButtons .title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: #fff;
+    }
+
+    #topButtons .title p:first-child {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    #topButtons .title p:last-child {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    #topButtons button {
+      background-color: #830303;
+      color: #fff;
+      padding: 10px 15px;
+      margin: 5px;
+      font-size: 14px;
+      border-radius: 10px;
+      border-color: black;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      align-items: center;
+    }
+
+    #topButtons button:hover {
+      background-color: #d35400;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
@@ -34,9 +79,22 @@
   </style>
 </head>
 <body>
+<!-- Navigation Bar -->
+<div id="topButtons">
+  <div class="title">
+    <p>NSBE</p>
+    <p>Milwaukee School of Engineering University</p>
+  </div>
+  <div>
+    <button type="button" onclick="navigateTo('home.html')">Home</button>
+    <button type="button" onclick="navigateTo('table.html')">Points</button>
+    <button type="button" onclick="navigateTo('aboutPage.html')">About</button>
+    <button type="button">Contact</button>
+  </div>
+</div>
+
 <h1>Point System for NSBE</h1>
 <p>Use the table below to track points for people in NSBE.</p>
-
 <div class="table-container">
   <table>
     <thead>
