@@ -1,0 +1,43 @@
+/* CSS file to style the NSBE About page */
+
+
+body {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 25px;
+    line-height: 1.5;
+    margin: 20px;
+    color: black;
+}
+
+
+h1 {
+    font-family: "Times New Roman", serif;
+    font-size: 32px;
+    color: Green
+}
+
+h2 {
+    font-family: 'Verdana', sans-serif;
+    font-size: 24px;
+    color: Green;
+}
+
+
+p {
+    font-family: "Times New Roman", serif;
+    font-size: 24px;
+    color: black;
+
+
+}
+
+
+a {
+    color: blue;
+    text-decoration: none;
+
+}
+
+a:hover {
+    text-decoration: underline;
+}
