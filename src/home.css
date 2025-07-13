@@ -70,7 +70,7 @@ h3 {
     margin: 5px;
     font-size: 14px;
     border-radius: 10px;
-    border-color: black;
+    border: 2px solid black;
     cursor: pointer;
     transition: background-color 0.3s;
     align-items: center;

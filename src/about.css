@@ -8,13 +8,14 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+
 }
 
 #topButtons .title {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    color: #fff;
+    color:white;
 }
 
 #topButtons .title p:first-child {
@@ -35,52 +36,58 @@
     margin: 5px;
     font-size: 14px;
     border-radius: 10px;
-    border-color: black;
+    border: 2px solid black;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
     align-items: center;
 }
 
 #topButtons button:hover {
     background-color: #d35400;
 }
+
+/* General Body Styling */
 body {
-    font-family: "Times New Roman", sans-serif;
+    font-family: "Times New Roman", serif;
     font-size: 25px;
-    line-height: 1.5;
-    margin: 20px;
-    color: black;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
-
+/* Heading Styles */
 h1 {
     font-family: "Times New Roman", serif;
     font-size: 32px;
-    color: Green
+    color: #12663b;
+    text-align: center;
 }
 
 h2 {
-    font-family: 'Verdana', sans-serif;
+    font-family: "Verdana", sans-serif;
     font-size: 24px;
-    color: Green;
+    color: #12663b;
+    text-align: center;
 }
 
-
-p {
+/* Paragraph Styles */
+#text .p {
     font-family: "Times New Roman", serif;
-    font-size: 24px;
-    color: black;
-
-
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-
+/* Link Styles */
 a {
-    color: blue;
+    color: #007bff;
     text-decoration: none;
-
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #0056b3;
 }
