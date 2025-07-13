@@ -84,3 +84,195 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* About Page Specific Styles */
+
+/* About Hero Section */
+.about-hero {
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+}
+
+.about-subtitle {
+    font-size: 1.3rem;
+    color: var(--gray-600);
+    font-weight: 500;
+    margin-top: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Content Sections */
+.content-section {
+    margin: 3rem 0;
+}
+
+.description-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--nsbe-green);
+    margin-top: 1.5rem;
+}
+
+.description-card p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--gray-800);
+    margin: 0;
+}
+
+/* FAQ Section */
+.faq-section {
+    margin: 4rem 0;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.faq-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--nsbe-green);
+}
+
+.faq-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.faq-card h3 {
+    color: var(--nsbe-green);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.faq-card p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.faq-card a {
+    color: var(--nsbe-red);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.faq-card a:hover {
+    color: var(--dark-green);
+    text-decoration: underline;
+}
+
+/* Contact Section */
+.contact-section {
+    background: linear-gradient(135deg, var(--light-green) 0%, var(--white) 100%);
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin: 4rem 0;
+    box-shadow: var(--shadow);
+}
+
+.contact-section h2 {
+    color: var(--nsbe-green);
+    margin-bottom: 1rem;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    color: var(--gray-600);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    background: var(--nsbe-green);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.social-link:hover {
+    background: var(--dark-green);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: var(--white);
+}
+
+/* Responsive Design for About Page */
+@media (max-width: 768px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .description-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .faq-card {
+        padding: 1.5rem;
+    }
+    
+    .contact-section {
+        padding: 2rem 1rem;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-link {
+        width: 200px;
+        text-align: center;
+    }
+}
+
+/* Animation for FAQ cards */
+.faq-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 0.6s ease forwards;
+}
+
+.faq-card:nth-child(1) { animation-delay: 0.1s; }
+.faq-card:nth-child(2) { animation-delay: 0.2s; }
+.faq-card:nth-child(3) { animation-delay: 0.3s; }
+.faq-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

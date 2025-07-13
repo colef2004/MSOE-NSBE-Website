@@ -6,7 +6,8 @@
     <title>MSOE NSBE | Home</title>
     <link rel="stylesheet" href="style.css">
     <script src="function.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/nsbelogo.png">
 </head>
 <body>
 <!-- Navigation Bar -->
@@ -19,20 +20,75 @@
         <button type="button" onclick="navigateTo('home.html')">Home</button>
         <button type="button" onclick="navigateTo('table.html')">Points</button>
         <button type="button" onclick="navigateTo('aboutPage.html')">About</button>
-        <button type="button">Contact</button>
+        <button type="button" onclick="sendEmail()">Email</button>
     </div>
 </div>
 
 <!-- Main Content -->
 <div class="container">
-    <img src="images/groupimage.jpg" alt="Group Image">
-    <h1>MSOE NSBE</h1>
-    <img src="images/nsbelogo.png" class="logo" alt="NSBE Logo">
-    <h2>National Society of Black Engineers | Region 4</h2>
+    <!-- Hero Section -->
+    <div class="hero-section fade-in-up">
+        <div class="hero-content">
+            <img src="images/groupimage.jpg" alt="NSBE Group Image" class="hero-image">
+            <h1>MSOE NSBE</h1>
+            <img src="images/nsbelogo.png" class="logo" alt="NSBE Logo">
+            <h2>National Society of Black Engineers | Region 4</h2>
+            <p class="hero-subtitle">Empowering Black Engineers at Milwaukee School of Engineering</p>
+        </div>
+    </div>
 
-    <div class="mission">
+    <!-- Stats Section -->
+    <div class="stats-section fade-in-up">
+        <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Active Members</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Events This Year</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Academic Excellence</div>
+        </div>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="mission fade-in-up">
         <h2>Our Mission</h2>
         <h3>"To increase the number of culturally responsible Black Engineers who excel academically, succeed professionally, and positively impact the community."</h3>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section fade-in-up">
+        <h2>What We Do</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <h3>Academic Support</h3>
+                <p>Study groups, tutoring, and academic resources to help members excel in their engineering coursework.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Professional Development</h3>
+                <p>Career workshops, networking events, and industry connections to prepare for professional success.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Community Impact</h3>
+                <p>Outreach programs, mentoring initiatives, and community service projects to make a positive difference.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-section fade-in-up">
+        <h2>Join Our Community</h2>
+        <p>Ready to be part of something bigger? Join MSOE NSBE and connect with fellow engineers who share your passion for excellence and community impact.</p>
+        <div class="cta-buttons">
+            <button class="cta-button primary" onclick="navigateTo('aboutPage.html')">Learn More</button>
+            <button class="cta-button secondary" onclick="navigateTo('table.html')">View Points</button>
+        </div>
     </div>
 </div>
 
@@ -40,5 +96,32 @@
 <footer>
     <p>&copy; 2025 MSOE NSBE. All Rights Reserved.</p>
 </footer>
+
+<script>
+// Add fade-in animation to elements as they come into view
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+});
+</script>
 </body>
 </html>

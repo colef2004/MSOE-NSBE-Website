@@ -3,78 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Point System Table</title>
+  <title>Points System | MSOE NSBE</title>
+  <link rel="stylesheet" href="style.css">
   <script src="function.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/nsbelogo.png">
   <style>
-    /* Navigation Bar */
-    #topButtons {
-      background-color: #12663b;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    /* Points Table Specific Styles */
+    .points-hero {
+      text-align: center;
+      padding: 3rem 0;
+      margin-bottom: 2rem;
     }
 
-    #topButtons .title {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      color: #fff;
+    .points-subtitle {
+      font-size: 1.3rem;
+      color: var(--gray-600);
+      font-weight: 500;
+      margin-top: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    #topButtons .title p:first-child {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 0;
-    }
-
-    #topButtons .title p:last-child {
-      font-size: 14px;
-      margin: 0;
-    }
-
-    #topButtons button {
-      background-color: #830303;
-      color: #fff;
-      padding: 10px 15px;
-      margin: 5px;
-      font-size: 14px;
-      border-radius: 10px;
-      border-color: black;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      align-items: center;
-    }
-
-    #topButtons button:hover {
-      background-color: #d35400;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
     .table-container {
-      width: 100%;
-      height: 300px;
-      overflow-y: scroll;
-      border: 1px solid #ddd;
-      margin-top: 20px;
+      background: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin: 2rem 0;
     }
+
+    .table-header {
+      background: linear-gradient(135deg, var(--nsbe-green) 0%, var(--dark-green) 100%);
+      color: var(--white);
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .table-header h2 {
+      color: var(--white);
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .table-header p {
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0.5rem 0 0 0;
+      font-size: 1.1rem;
+    }
+
+    .table-wrapper {
+      max-height: 600px;
+      overflow-y: auto;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
+      background: var(--white);
     }
-    th, td {
-      padding: 12px;
-      text-align: left;
-      border: 1px solid #ddd;
-    }
+
     th {
-      background-color: #f4f4f4;
+      background: var(--gray-100);
+      color: var(--nsbe-green);
+      font-weight: 700;
+      padding: 1.2rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
+
     td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-800);
+      font-weight: 500;
+    }
+
+    tr:hover {
+      background: var(--light-green);
+      transition: var(--transition);
+    }
+
+    .points-cell {
       text-align: center;
+      font-weight: 700;
+      color: var(--nsbe-green);
+      font-size: 1.1rem;
+    }
+
+    .name-cell {
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+
+    /* Top performers highlighting */
+    tr:nth-child(1) .points-cell {
+      color: var(--nsbe-gold);
+      font-size: 1.2rem;
+    }
+
+    tr:nth-child(2) .points-cell {
+      color: #c0c0c0;
+      font-size: 1.15rem;
+    }
+
+    tr:nth-child(3) .points-cell {
+      color: #cd7f32;
+      font-size: 1.1rem;
+    }
+
+    /* Stats cards */
+    .stats-overview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .stat-card {
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      border-top: 4px solid var(--nsbe-green);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--nsbe-green);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .table-wrapper {
+        max-height: 400px;
+      }
+      
+      th, td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
+      }
+      
+      .stats-overview {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Custom scrollbar */
+    .table-wrapper::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .table-wrapper::-webkit-scrollbar-track {
+      background: var(--gray-200);
+      border-radius: 4px;
+    }
+
+    .table-wrapper::-webkit-scrollbar-thumb {
+      background: var(--nsbe-green);
+      border-radius: 4px;
+    }
+
+    .table-wrapper::-webkit-scrollbar-thumb:hover {
+      background: var(--dark-green);
     }
   </style>
 </head>
@@ -89,312 +196,374 @@
     <button type="button" onclick="navigateTo('home.html')">Home</button>
     <button type="button" onclick="navigateTo('table.html')">Points</button>
     <button type="button" onclick="navigateTo('aboutPage.html')">About</button>
-    <button type="button">Contact</button>
+    <button type="button" onclick="sendEmail()">Email</button>
   </div>
 </div>
 
-<h1>Point System for NSBE</h1>
-<p>Use the table below to track points for people in NSBE.</p>
-<div class="table-container">
-  <table>
-    <thead>
-    <tr>
-      <th>User</th>
-      <th>Points</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Theodore Ruffin</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>Njoroge Kahende</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>Sarai DeSouza</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>Johnathan Burroughs</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <td>Wilfried Tapsobe</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <td>Vivika Ramos</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>Dani Mendez</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>Dwayne Veal</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>Gideon Omoruyi</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>Nana Adubofour</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>Aidan Blackmon</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>Blessing Ogwo</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>Davinah Carr</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>Jamaal Muhammad</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>Peli Orugbani</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>Avery Evans</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>Chris Martin</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>Demarion Williams</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>Felix Kimeu</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>Jordan Monroe</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>Maximus Bryant</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>Stevenson Jeffries</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>Binta Touray</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Briana Tucker</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Charles Harris</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Helina Mulugeta</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Iyanuoluwa Adebayo </td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Teni Fajemisin</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Armani Hawkins</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Ousmane Nikiema</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Ahnesty Washington</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Alexis Williams</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Bri</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Chred Tshibangu </td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Dana Al-Slabibi</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Dimas Monte</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Erika Mendez</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Jayden Hudson</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Jorja Hamlin</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Kayla Ghee</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Kristof Gandy</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Moneera Chowdhury</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Kaleb McEachin</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Muhammad Alliyu</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Adrian Rubio Reyes</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Alena Her</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Angelo Barlan-Pagurayan</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Annette Kasongo</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Ansar Keulimzhayev</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Backliff Mwaya</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Brett Storoe</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Brian Reyna Flores</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Charlene Yumang</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Demond Holt</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Eagen Meisenheimer</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Eduardo Ocampo</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Evan Cummings </td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Ian Kaiser </td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Jacqui NAVARRO</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Jeanette Munoz</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Kevin Nakasagga</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Madison Mina</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Mikkel Palmer</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Nghadi Kamara </td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Olivia Bartels</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Sara Ahmed</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Sydney Emineth</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Tiffany Villalobos</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Tony Wayne</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Zahriah Nwanosike</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Zion Aggrey</td>
-      <td>1</td>
-    </tr>
-    <!-- Add more rows with human names and their points -->
-    </tbody>
-  </table>
+<div class="container">
+  <!-- Points Hero Section -->
+  <div class="points-hero fade-in-up">
+    <h1>NSBE Points System</h1>
+    <p class="points-subtitle">Track your participation and engagement with the MSOE NSBE chapter</p>
+  </div>
+
+  <!-- Stats Overview -->
+  <div class="stats-overview fade-in-up">
+    <div class="stat-card">
+      <div class="stat-number">75+</div>
+      <div class="stat-label">Total Members</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">0</div>
+      <div class="stat-label">Highest Points</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">0</div>
+      <div class="stat-label">Average Points</div>
+    </div>
+  </div>
+
+  <!-- Points Table -->
+  <div class="table-container fade-in-up">
+    <div class="table-header">
+      <h2>Member Points Leaderboard</h2>
+      <p>Updated regularly based on event attendance and participation</p>
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Member Name</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="name-cell">Theodore Ruffin</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Njoroge Kahende</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Sarai DeSouza</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Johnathan Burroughs</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Wilfried Tapsobe</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Vivika Ramos</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Dani Mendez</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Dwayne Veal</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Gideon Omoruyi</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Nana Adubofour</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Aidan Blackmon</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Blessing Ogwo</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Davinah Carr</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Jamaal Muhammad</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Peli Orugbani</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Avery Evans</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Chris Martin</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Demarion Williams</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Felix Kimeu</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Jordan Monroe</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Maximus Bryant</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Stevenson Jeffries</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Binta Touray</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Briana Tucker</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Charles Harris</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Helina Mulugeta</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Iyanuoluwa Adebayo</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Teni Fajemisin</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Armani Hawkins</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Ousmane Nikiema</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Ahnesty Washington</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Alexis Williams</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Bri</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Chred Tshibangu</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Dana Al-Slabibi</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Dimas Monte</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Erika Mendez</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Jayden Hudson</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Jorja Hamlin</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Kayla Ghee</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Kristof Gandy</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Moneera Chowdhury</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Kaleb McEachin</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Muhammad Alliyu</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Adrian Rubio Reyes</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Alena Her</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Angelo Barlan-Pagurayan</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Annette Kasongo</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Ansar Keulimzhayev</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Backliff Mwaya</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Brett Storoe</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Brian Reyna Flores</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Charlene Yumang</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Demond Holt</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Eagen Meisenheimer</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Eduardo Ocampo</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Evan Cummings</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Ian Kaiser</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Jacqui NAVARRO</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Jeanette Munoz</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Kevin Nakasagga</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Madison Mina</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Mikkel Palmer</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Nghadi Kamara</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Olivia Bartels</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Sara Ahmed</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Sydney Emineth</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Tiffany Villalobos</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Tony Wayne</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Zahriah Nwanosike</td>
+            <td class="points-cell">0</td>
+          </tr>
+          <tr>
+            <td class="name-cell">Zion Aggrey</td>
+            <td class="points-cell">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- How to Earn Points -->
+  <div class="mission fade-in-up">
+    <h2>How to Earn Points</h2>
+    <h3>Attend events, general meetings, and participate in NSBE activities. Don't forget to scan the QR code at each event so our secretary can track your attendance and award points accordingly!</h3>
+  </div>
 </div>
 
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 MSOE NSBE. All Rights Reserved.</p>
+</footer>
+
 <script>
-  // No need for JavaScript logic now, as the table is static with human names and points.
+// Add fade-in animation to elements as they come into view
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+});
 </script>
 </body>
 </html>
