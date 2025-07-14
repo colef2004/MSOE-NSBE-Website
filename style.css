@@ -824,3 +824,36 @@ footer p {
 .table-wrapper::-webkit-scrollbar-thumb:hover {
     background: var(--dark-green);
 } 
+
+/* Under Construction Animation for Calendar Page */
+.under-construction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+}
+
+.construction-icon {
+    font-size: 6rem;
+    animation: bounce 1.2s infinite alternate;
+    margin-bottom: 1.5rem;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+}
+
+.under-construction-message {
+    font-size: 2rem;
+    color: var(--nsbe-red, #830303);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.under-construction-sub {
+    font-size: 1.2rem;
+    color: var(--gray-600, #6c757d);
+} 
