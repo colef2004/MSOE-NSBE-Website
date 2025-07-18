@@ -185,14 +185,12 @@ p {
 }
 
 /* Images */
-img {
+img, .hero-image, .logo {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 img:hover {
@@ -774,6 +772,18 @@ footer p {
     
     .stats-overview {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-image, .logo {
+        max-width: 98vw;
+        margin-bottom: 1.2rem;
+    }
+    .about-hero img {
+        max-width: 98vw;
+        margin-top: 1.2rem;
+        border-radius: 12px;
     }
 }
 
