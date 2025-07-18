@@ -29,7 +29,9 @@
     <!-- Hero Section -->
     <div class="hero-section fade-in-up">
         <div class="hero-content">
-            <img src="images/groupimage.jpg" alt="NSBE Group Image" class="hero-image">
+            <!-- Slideshow Start -->
+            <img id="slideshow" src="images/groupimage.jpg" alt="NSBE Slideshow" class="hero-image">
+            <!-- Slideshow End -->
             <h1>MSOE NSBE</h1>
             <img src="images/nsbelogo.png" class="logo" alt="NSBE Logo">
             <h2>National Society of Black Engineers | Region 4</h2>
@@ -64,12 +66,12 @@
         <h2>What We Do</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">🎓</div>
-                <h3>Academic Support</h3>
-                <p>Study groups, tutoring, and academic resources to help members excel in their engineering coursework.</p>
+                <div class="feature-icon">☮️</div>
+                <h3>Cultural Connection & Belonging</h3>
+                <p>Build community by connecting Black students with peers, mentors, and leaders who look like them, creating spaces where members feel seen, supported, and empowered.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🤝</div>
+                <div class="feature-icon">🫱🏿‍🫲🏿</div>
                 <h3>Professional Development</h3>
                 <p>Career workshops, networking events, and industry connections to prepare for professional success.</p>
             </div>
@@ -121,6 +123,25 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
+
+    // Slideshow logic with fade transition
+    const slideshowImages = [
+        'images/groupimage.jpg',
+        'images/Image (8).jpg',
+        'images/Image (9).jpg',
+        'images/Image (10).jpg',
+        'images/Image (11).jpg',
+        'images/Image (12).jpg',
+        'images/Image (13).jpg',
+        'images/Image (14).jpg',
+        'images/Image (15).jpg'
+    ];
+    let currentSlide = 0;
+    const slideshow = document.getElementById('slideshow');
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % slideshowImages.length;
+        slideshow.src = slideshowImages[currentSlide];
+    }, 2500);
 });
 </script>
 </body>

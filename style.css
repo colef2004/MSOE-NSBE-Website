@@ -14,8 +14,23 @@
     --gray-900: #212529;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-    --border-radius: 12px;
+    --border-radius: 11.4px;
     --transition: all 0.3s ease;
+    --base-font-size: 0.95rem;
+    --h1-size: clamp(2.375rem, 4.75vw, 3.8rem);
+    --h2-size: clamp(1.71rem, 3.8vw, 2.375rem);
+    --h3-size: clamp(1.14rem, 2.85vw, 1.425rem);
+    --stat-number-size: 2.85rem;
+    --stat-label-size: 1.045rem;
+    --feature-icon-size: 2.85rem;
+    --container-padding: 1.9rem;
+    --section-padding: 2.85rem 1.9rem;
+    --border-radius: 11.4px;
+    --logo-max-width: 190px;
+    --hero-image-max-width: 760px;
+    --cta-padding: 3.8rem 1.9rem;
+    --cta-button-padding: 0.95rem 1.9rem;
+    --faq-card-padding: 1.9rem;
 }
 
 * {
@@ -30,6 +45,7 @@ body {
     color: var(--gray-800);
     background: linear-gradient(135deg, var(--gray-100) 0%, var(--white) 100%);
     min-height: 100vh;
+    font-size: var(--base-font-size);
 }
 
 /* Typography */
@@ -40,27 +56,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: var(--h1-size);
     color: var(--nsbe-green);
     text-align: center;
     margin-bottom: 1.5rem;
 }
 
 h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-size: var(--h2-size);
     color: var(--dark-green);
     text-align: center;
     margin-bottom: 1rem;
 }
 
 h3 {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-size: var(--h3-size);
     color: var(--gray-800);
     font-weight: 600;
 }
 
 p {
-    font-size: 1.1rem;
+    font-size: var(--base-font-size);
     color: var(--gray-600);
     margin-bottom: 1rem;
 }
@@ -84,22 +100,27 @@ p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    color: var(--white);
+    color: #111;
+    font-family: 'Inter', 'Roboto', Arial, sans-serif;
 }
 
 #topButtons .title p:first-child {
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 2.5rem;
+    font-weight: 900;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    color: #111;
+    font-family: 'Inter', 'Roboto', Arial, sans-serif;
 }
 
 #topButtons .title p:last-child {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     margin: 0;
     opacity: 0.9;
-    font-weight: 400;
+    font-weight: 500;
+    color: #111;
+    font-family: 'Inter', 'Roboto', Arial, sans-serif;
 }
 
 #topButtons button {
@@ -110,7 +131,7 @@ p {
     font-size: 0.9rem;
     font-weight: 600;
     border-radius: var(--border-radius);
-    border: none;
+    border: 2px solid #111;
     cursor: pointer;
     transition: var(--transition);
     box-shadow: var(--shadow);
@@ -132,7 +153,7 @@ p {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: var(--container-padding);
     text-align: center;
 }
 
@@ -140,7 +161,7 @@ p {
 .hero-section {
     background: linear-gradient(135deg, var(--light-green) 0%, var(--white) 100%);
     border-radius: var(--border-radius);
-    padding: 3rem 2rem;
+    padding: var(--section-padding);
     margin: 2rem 0;
     box-shadow: var(--shadow);
     position: relative;
@@ -180,7 +201,7 @@ img:hover {
 }
 
 .logo {
-    max-width: 200px;
+    max-width: var(--logo-max-width);
     margin: 2rem auto;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
@@ -188,7 +209,7 @@ img:hover {
 /* Mission Section */
 .mission {
     background: linear-gradient(135deg, var(--white) 0%, var(--light-green) 100%);
-    padding: 3rem 2rem;
+    padding: var(--section-padding);
     border-radius: var(--border-radius);
     margin: 3rem auto;
     box-shadow: var(--shadow);
@@ -248,21 +269,21 @@ img:hover {
 }
 
 .stat-number {
-    font-size: 3rem;
+    font-size: var(--stat-number-size);
     font-weight: 800;
     color: var(--nsbe-green);
     margin-bottom: 0.5rem;
 }
 
 .stat-label {
-    font-size: 1.1rem;
+    font-size: var(--stat-label-size);
     color: var(--gray-600);
     font-weight: 600;
 }
 
 /* Hero Section Enhancements */
 .hero-image {
-    max-width: 800px;
+    max-width: var(--hero-image-max-width);
     margin-bottom: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-lg);
@@ -303,7 +324,7 @@ img:hover {
 }
 
 .feature-icon {
-    font-size: 3rem;
+    font-size: var(--feature-icon-size);
     margin-bottom: 1rem;
     display: block;
 }
@@ -323,7 +344,7 @@ img:hover {
 .cta-section {
     background: linear-gradient(135deg, var(--nsbe-green) 0%, var(--dark-green) 100%);
     color: var(--white);
-    padding: 4rem 2rem;
+    padding: var(--cta-padding);
     border-radius: var(--border-radius);
     text-align: center;
     margin: 4rem 0;
@@ -366,7 +387,7 @@ img:hover {
 }
 
 .cta-button {
-    padding: 1rem 2rem;
+    padding: var(--cta-button-padding);
     font-size: 1rem;
     font-weight: 600;
     border-radius: var(--border-radius);
@@ -542,7 +563,7 @@ tr:nth-child(3) .points-cell {
 
 .description-card {
     background: var(--white);
-    padding: 2.5rem;
+    padding: var(--faq-card-padding);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     border-left: 5px solid var(--nsbe-green);
@@ -570,7 +591,7 @@ tr:nth-child(3) .points-cell {
 
 .faq-card {
     background: var(--white);
-    padding: 2rem;
+    padding: var(--faq-card-padding);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     transition: var(--transition);
@@ -611,7 +632,7 @@ tr:nth-child(3) .points-cell {
 /* Contact Section */
 .contact-section {
     background: linear-gradient(135deg, var(--light-green) 0%, var(--white) 100%);
-    padding: 3rem 2rem;
+    padding: var(--section-padding);
     border-radius: var(--border-radius);
     text-align: center;
     margin: 4rem 0;
