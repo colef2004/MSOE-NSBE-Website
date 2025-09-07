@@ -1,0 +1,172 @@
+/* Donate Page Base Styles */
+.contact-header {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 0;
+}
+
+.contact-header p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-header .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 5rem;
+}
+
+
+.executive-board-section {
+  background: var(--primary-green);
+  margin: 2rem 0;
+}
+
+.executive-board-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.executive-board-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.executive-card {
+  background: white;
+  padding: 2rem 2rem 1rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.steps-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.steps-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Donate Page Mobile Styles */
+@media (max-width: 480px) {
+  .executive-board-grid[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    align-items: center !important;
+  }
+
+  .steps-content {
+    order: 2;
+  }
+
+  .steps-image {
+    order: 1;
+    margin-bottom: 2rem;
+  }
+
+  .steps-image img {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .steps-image a[href*="give.msoe.edu"] {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 1rem !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    text-align: center !important;
+  }
+}
+
+/* Donate Page Ultra-Mobile Styles */
+@media (max-width: 480px) {
+  .executive-board-grid[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    align-items: center !important;
+  }
+
+  .executive-board-header {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .steps-content {
+    order: 2;
+  }
+
+  .steps-image {
+    order: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .steps-image img {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .steps-image a[href*="give.msoe.edu"] {
+    padding: 0.7rem 1.2rem !important;
+    font-size: 0.9rem !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    text-align: center !important;
+  }
+
+  .executive-card[style*="margin-bottom: 1.5rem"] {
+    padding: 1rem 1rem 0 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .executive-card[style*="margin-bottom: 2rem"] {
+    margin-bottom: 1rem !important;
+    padding: 1rem !important;
+  }
+
+  .executive-card h4[style*="font-size: 1.2rem"] {
+    font-size: 1rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .executive-card p[style*="color: var(--gray-600)"] {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .executive-card div[style*="width: 30px; height: 30px"] {
+    width: 25px !important;
+    height: 25px !important;
+    font-size: 0.8rem !important;
+    margin-right: 0.8rem !important;
+  }
+
+  .contact-header {
+    padding: 0rem 1.5rem 0 1.5rem;
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .contact-header .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}

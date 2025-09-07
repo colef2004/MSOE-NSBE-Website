@@ -1,0 +1,188 @@
+/* Sponsor Page Base Styles */
+.sponsor-header {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 0;
+}
+
+.sponsor-header .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 5rem;
+}
+
+.sponsor-form {
+  background: var(--white);
+  padding: 2rem;
+  text-align: left;
+}
+
+.sponsor-form div[style*="grid-template-columns: 1fr 1fr"] {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sponsor-form input,
+.sponsor-form select,
+.sponsor-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.sponsor-form input:focus,
+.sponsor-form select:focus,
+.sponsor-form textarea:focus {
+  border-color: var(--nsbe-green);
+  outline: none;
+}
+
+.sponsor-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--nsbe-green);
+}
+
+.sponsor-form button[type="submit"] {
+  background: linear-gradient(135deg, var(--nsbe-green) 0%, var(--dark-green) 100%);
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(18, 102, 59, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sponsor-form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(18, 102, 59, 0.4);
+}
+
+.executive-board-section {
+  margin-top: 3rem;
+}
+
+.executive-board-section h2 {
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+/* Sponsor Benefit Cards */
+.executive-board-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+}
+
+.executive-card {
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* Sponsor Page Mobile Styles */
+@media (max-width: 480px) {
+  .executive-board-section {
+    margin-top: 2.5rem;
+  }
+
+  .executive-board-section h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .executive-board-grid {
+    margin: 1rem 1rem 0 1rem;
+  }
+
+  .contact-details {
+    padding: 0 1rem 3rem 1rem;
+  }
+
+  .executive-card {
+    padding: 0.3rem;
+  }
+
+  .sponsor-form {
+    padding: 1.5rem !important;
+    margin: 0 1rem !important;
+  }
+
+  .sponsor-form div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .sponsor-form input,
+  .sponsor-form select,
+  .sponsor-form textarea {
+    font-size: 0.9rem !important;
+    padding: 0.7rem !important;
+  }
+
+  .sponsor-form button[type="submit"] {
+    padding: 0.8rem 2rem !important;
+    font-size: 1rem !important;
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+
+  /* Sponsor Page Ultra-Mobile Styles */
+  .sponsor-header {
+    padding: 0rem 1.5rem 0 1.5rem;
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .sponsor-header .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .sponsor-form {
+    padding: 0.1rem !important;
+    margin: 0 0.5rem !important;
+  }
+
+  .sponsor-form div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem !important;
+  }
+
+  .sponsor-form input,
+  .sponsor-form select,
+  .sponsor-form textarea {
+    font-size: 0.85rem !important;
+    padding: 0.6rem !important;
+  }
+
+  .sponsor-form button[type="submit"] {
+    padding: 0.7rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    width: 100% !important;
+    max-width: 250px !important;
+  }
+
+  .sponsor-form textarea {
+    rows: 4 !important;
+  }
+}

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | MSOE NSBE</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/gallery.css">
+  <script src="function.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="images/nsbelogo.png">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <div id="nav-bar">
+    <div class="title" onclick="navigateTo('index.html')">
+      <p><img src="images/nsbelogo.png" alt="NSBE Logo" class="nav-logo"> NSBE</p>
+      <p>Milwaukee School of Engineering University</p>
+    </div>
+
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger" onclick="toggleMobileMenu()">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Desktop Navigation -->
+    <div class="nav-menu desktop-nav">
+      <button type="nav-button" onclick="navigateTo('index.html')">Home</button>
+      <button type="nav-button" onclick="navigateTo('table.html')">Points</button>
+      <div class="dropdown">
+        <button class="dropdown-btn" type="nav-button">Events <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-content">
+          <a href="#" onclick="navigateTo('calendar.html')">Calendar</a>
+          <a href="#" onclick="navigateTo('gallery.html')">Gallery</a>
+        </div>
+      </div>
+      <button type="nav-button" onclick="navigateTo('contact.html')">Contact</button>
+      <div class="dropdown">
+        <button class="dropdown-btn" type="nav-button">Support Us <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-content">
+          <a href="#" onclick="navigateTo('sponsor.html')"> Sponsors</a>
+          <a href="#" onclick="navigateTo('donate.html')">Donate</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+      <div class="mobile-nav-content">
+        <a href="#" onclick="navigateTo('index.html')" class="mobile-nav-link">Home</a>
+        <a href="#" onclick="navigateTo('table.html')" class="mobile-nav-link">Points</a>
+        <a href="#" onclick="navigateTo('calendar.html')" class="mobile-nav-link">Events Calendar</a>
+        <a href="#" onclick="navigateTo('gallery.html')" class="mobile-nav-link">Gallery</a>
+        <a href="#" onclick="navigateTo('contact.html')" class="mobile-nav-link">Contact</a>
+        <a href="#" onclick="navigateTo('sponsor.html')" class="mobile-nav-link">Be a Sponsor</a>
+        <a href="#" onclick="navigateTo('donate.html')" class="mobile-nav-link">Donate</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Gallery Grid -->
+    <div class="gallery-section fade-in-up">
+      <div class="gallery-header">
+        <h2 class="section-title">Our Memories</h2>
+        <button class="view-all-btn" onclick="openGalleryModal()">
+          <i class="fas fa-eye" style="margin-right: 0.5em;"></i>View All Pictures
+        </button>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/eboard2024-2025grouppic.jpg" alt="NSBE Group Photo" class="gallery-image">
+          <div class="gallery-caption">
+            <span class="pin-icon" title="Pinned"><i class="fas fa-thumbtack"></i></span>
+            <span style="margin-left: 1rem;">NSBE Eboard - 2024/2025</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_9608.heic" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">Guest Speaker: Nadiyah Johnson</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_5531.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">NSBE + SHPE: Play Hard and Chill Harder</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_5330.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">Guest Speaker: Clarios</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_4759.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">NSBE National Convention 2025</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_1033.JPG" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">Black History Month Program 2025</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_7811.jpg" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">City Wide Meet Up Fall 2024</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_3971.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">Jeopardy Night</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_3878.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">Bingo Night</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_2797.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">Kookies For Kwanzaa</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_2502.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">Guest Speaker: Kobena Marcus Collins</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_0230.JPG" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">MAP NSBE Gala</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_2343.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">NSBE Giving Dinner Fall 2024</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_2241.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">Special Guest Speaker: Mr Michael Barber</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_1898.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">General Meeting: Mingle + Chick-fil-A</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_1350.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">Movie Night: Get Out</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_0866.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">Guest Speaker: Generac</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_0773.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">NSBE Eboard Bonding</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_0633.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">Diversity Fair Night</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/events2024-2025/IMG_0414.HEIC" alt="NSBE Event" class="gallery-image">
+          <div class="gallery-caption">Block Party</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery Modal -->
+  <div id="galleryModal" class="gallery-modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeGalleryModal()">&times;</button>
+      <div class="modal-body">
+        <button class="modal-nav prev-btn" onclick="changeImage(-1)">&#8249;</button>
+        <div class="modal-image-container">
+          <img id="modalImage" src="" alt="" class="modal-image">
+          <div class="image-caption" id="imageCaption"></div>
+        </div>
+        <button class="modal-nav next-btn" onclick="changeImage(1)">&#8250;</button>
+      </div>
+      <div class="modal-footer">
+        <div class="thumbnail-container">
+          <div class="thumbnails" id="thumbnails"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="images/nsbelogo.png" alt="NSBE Logo" class="footer-logo-img">
+      </div>
+
+      <!-- NSBE Title -->
+      <h2 class="footer-nsbe-title">NSBE</h2>
+
+      <!-- School Name -->
+      <p class="footer-school">Milwaukee School of Engineering</p>
+      <!-- Email -->
+      <p class="footer-email"><strong>Email:</strong> colef@msoe.edu</p>
+
+      <div class="executive-board-header">
+        <div class="social-links-header">
+          <a href="https://www.instagram.com/nsbe_msoe" class="social-link-header" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://teams.microsoft.com/l/channel/19%3A2aa1c66b38444a8bac0bc69980975c54%40thread.tacv2/General?groupId=4c374086-a5ed-4811-8524-d3aa0968cf8a&tenantId=4046ceac-fdd3-46c9-ac80-b7c4a49bab70"
+            class="social-link-header" title="Microsoft Teams">
+            <i class="fab fa-microsoft"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p>&copy; 2025 MSOE NSBE. All Rights Reserved.</p>
+        <p>Website by MSOE NSBE Chapter</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Gallery data
+    const galleryImages = [
+      { src: 'images/eboard2024-2025grouppic.jpg', caption: 'NSBE Eboard - 2024/2025' },
+      { src: 'images/events2024-2025/IMG_9608.heic', caption: 'Guest Speaker: Nadiyah Johnson' },
+      { src: 'images/events2024-2025/IMG_5531.HEIC', caption: 'NSBE + SHPE: Play Hard and Chill Harder' },
+      { src: 'images/events2024-2025/IMG_5330.HEIC', caption: 'Guest Speaker: Clarios' },
+      { src: 'images/events2024-2025/IMG_4759.HEIC', caption: 'NSBE National Convention 2025' },
+      { src: 'images/events2024-2025/IMG_1033.JPG', caption: 'Black History Month Program 2025' },
+      { src: 'images/events2024-2025/IMG_7811.jpg', caption: 'City Wide Meet Up Fall 2024' },
+      { src: 'images/events2024-2025/IMG_3971.HEIC', caption: 'Jeopardy Night' },
+      { src: 'images/events2024-2025/IMG_3878.HEIC', caption: 'Bingo Night' },
+      { src: 'images/events2024-2025/IMG_2797.HEIC', caption: 'Kookies For Kwanzaa' },
+      { src: 'images/events2024-2025/IMG_2502.HEIC', caption: 'Guest Speaker: Kobena Marcus Collins' },
+      { src: 'images/events2024-2025/IMG_0230.JPG', caption: 'MAP NSBE Gala' },
+      { src: 'images/events2024-2025/IMG_2343.HEIC', caption: 'NSBE Giving Dinner Fall 2024' },
+      { src: 'images/events2024-2025/IMG_2241.HEIC', caption: 'Special Guest Speaker: Mr Michael Barber' },
+      { src: 'images/events2024-2025/IMG_1898.HEIC', caption: 'General Meeting: Mingle + Chick-fil-A' },
+      { src: 'images/events2024-2025/IMG_1350.HEIC', caption: 'Movie Night: Get Out' },
+      { src: 'images/events2024-2025/IMG_0866.HEIC', caption: 'Guest Speaker: Generac' },
+      { src: 'images/events2024-2025/IMG_0773.HEIC', caption: 'NSBE Eboard Bonding' },
+      { src: 'images/events2024-2025/IMG_0633.HEIC', caption: 'Diversity Fair Night' },
+      { src: 'images/events2024-2025/IMG_0414.HEIC', caption: 'Block Party' },
+      { src: 'images/events2024-2025/IMG_0405.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0394.jpg', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0353.jpg', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0350.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0335.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0244.JPG', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0241.JPG', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0670.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0651.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0745.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0743.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0730.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0884.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0874.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_0868.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_1013.JPG', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_1010.JPG', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_1144.JPG', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_1319.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_1316.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_1894.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_1889.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2230.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2221.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2220.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2297.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2290.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2321.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2312.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2328.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2330.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2346.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2349.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2356.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2359.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2368.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2373.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2375.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2488.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2499.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2515.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2733.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2763.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2767.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2773.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2778.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_2803.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_3867.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_3873.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_3874.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_3883.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_3886.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_3893.heic', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_3933.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_3937.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_3948.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_3960.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_4524.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_4525.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_4529.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_4531.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_4556.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_4578.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_4741.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_4777.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_4828.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_5333.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_5334.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_5536.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_5545.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_5547.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_5812.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_5817.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_5823.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_5826.HEIC', caption: 'NSBE Photo' },
+      { src: 'images/events2024-2025/IMG_8850.JPG', caption: 'NSBE Photo' }
+    ];
+
+    let currentImageIndex = 0;
+
+    // Add fade-in animation to elements as they come into view
+    document.addEventListener('DOMContentLoaded', function () {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections
+      document.querySelectorAll('.fade-in-up').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+      });
+
+      // Initialize thumbnails
+      initializeThumbnails();
+    });
+
+    // Open gallery modal
+    function openGalleryModal() {
+      const modal = document.getElementById('galleryModal');
+      modal.style.display = 'flex';
+      currentImageIndex = 0;
+      updateModalImage();
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close gallery modal
+    function closeGalleryModal() {
+      const modal = document.getElementById('galleryModal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Change image
+    function changeImage(direction) {
+      currentImageIndex += direction;
+
+      if (currentImageIndex < 0) {
+        currentImageIndex = galleryImages.length - 1;
+      } else if (currentImageIndex >= galleryImages.length) {
+        currentImageIndex = 0;
+      }
+
+      updateModalImage();
+    }
+
+    // Update modal image
+    function updateModalImage() {
+      const modalImage = document.getElementById('modalImage');
+      const imageCaption = document.getElementById('imageCaption');
+
+      modalImage.src = galleryImages[currentImageIndex].src;
+      modalImage.alt = galleryImages[currentImageIndex].caption;
+      imageCaption.textContent = galleryImages[currentImageIndex].caption;
+
+      // Update thumbnail selection
+      updateThumbnailSelection();
+    }
+
+    // Initialize thumbnails
+    function initializeThumbnails() {
+      const thumbnailsContainer = document.getElementById('thumbnails');
+
+      galleryImages.forEach((image, index) => {
+        const thumbnail = document.createElement('div');
+        thumbnail.className = 'thumbnail';
+        thumbnail.innerHTML = `<img src="${image.src}" alt="${image.caption}" onclick="goToImage(${index})">`;
+        thumbnailsContainer.appendChild(thumbnail);
+      });
+    }
+
+    // Go to specific image
+    function goToImage(index) {
+      currentImageIndex = index;
+      updateModalImage();
+    }
+
+    // Update thumbnail selection
+    function updateThumbnailSelection() {
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      thumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentImageIndex);
+      });
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('galleryModal').addEventListener('click', function (e) {
+      if (e.target === this) {
+        closeGalleryModal();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function (e) {
+      const modal = document.getElementById('galleryModal');
+      if (modal.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') {
+          changeImage(-1);
+        } else if (e.key === 'ArrowRight') {
+          changeImage(1);
+        } else if (e.key === 'Escape') {
+          closeGalleryModal();
+        }
+      }
+    });
+
+    function toggleMobileDropdown(dropdownId) {
+      const dropdown = document.getElementById(dropdownId + '-dropdown');
+      const toggle = document.querySelector(`[onclick="toggleMobileDropdown('${dropdownId}')"]`);
+      const icon = toggle.querySelector('i');
+
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      icon.style.transform = dropdown.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+  </script>
+</body>
+
+</html>

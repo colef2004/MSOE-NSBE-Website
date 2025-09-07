@@ -1,109 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | MSOE NSBE</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/contact.css">
     <script src="function.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="images/nsbelogo.png">
 </head>
+
 <body>
-<!-- Navigation Bar -->
-<div id="topButtons">
-    <div class="title">
-        <p>NSBE</p>
-        <p>Milwaukee School of Engineering University</p>
-    </div>
-    <div>
-        <button type="button" onclick="navigateTo('index.html')">Home</button>
-        <button type="button" onclick="navigateTo('table.html')">Points</button>
-        <button type="button" onclick="navigateTo('aboutPage.html')">About</button>
-        <button type="button" onclick="navigateTo('calendar.html')">Calendar</button>
-    </div>
-</div>
-
-<div class="container">
-    <!-- Contact Hero Section -->
-    <div class="hero-section fade-in-up">
-        <div class="hero-content">
-            <h1>Contact Us</h1>
-            <p class="hero-subtitle">Get in touch with the MSOE NSBE chapter leadership</p>
+    <!-- Navigation Bar -->
+    <div id="nav-bar">
+        <div class="title" onclick="navigateTo('index.html')">
+            <p><img src="images/nsbelogo.png" alt="NSBE Logo" class="nav-logo"> NSBE</p>
+            <p>Milwaukee School of Engineering University</p>
         </div>
-    </div>
 
-    <!-- Contact Information -->
-    <div class="features-section fade-in-up">
-        <h2>Get in Touch</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📧</div>
-                <h3>Email</h3>
-                <p>Reach out to our chapter president at <a href="mailto:colef@msoe.edu">colef@msoe.edu</a></p>
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger" onclick="toggleMobileMenu()">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-menu desktop-nav">
+            <button type="nav-button" onclick="navigateTo('index.html')">Home</button>
+            <button type="nav-button" onclick="navigateTo('table.html')">Points</button>
+            <div class="dropdown">
+                <button class="dropdown-btn" type="nav-button">Events <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="navigateTo('calendar.html')">Calendar</a>
+                    <a href="#" onclick="navigateTo('gallery.html')">Gallery</a>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>Social Media</h3>
-                <p>Follow us on Instagram and join our Teams channel for updates</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🏢</div>
-                <h3>Location</h3>
-                <p>Milwaukee School of Engineering<br>1025 N Broadway<br>Milwaukee, WI 53202</p>
+            <button type="nav-button" onclick="navigateTo('contact.html')">Contact</button>
+            <div class="dropdown">
+                <button class="dropdown-btn" type="nav-button">Support Us <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="navigateTo('sponsor.html')"> Sponsors</a>
+                    <a href="#" onclick="navigateTo('donate.html')">Donate</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Contact Form -->
-    <div class="mission fade-in-up">
-        <h2>Send us a Message</h2>
-        <div class="description-card">
-            <p>Have questions about joining NSBE or upcoming events? Fill out the form below and we'll get back to you as soon as possible.</p>
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav" id="mobile-nav">
+            <div class="mobile-nav-content">
+                <a href="#" onclick="navigateTo('index.html')" class="mobile-nav-link">Home</a>
+                <a href="#" onclick="navigateTo('table.html')" class="mobile-nav-link">Points</a>
+                <a href="#" onclick="navigateTo('calendar.html')" class="mobile-nav-link">Events Calendar</a>
+                <a href="#" onclick="navigateTo('gallery.html')" class="mobile-nav-link">Gallery</a>
+                <a href="#" onclick="navigateTo('contact.html')" class="mobile-nav-link">Contact</a>
+                <a href="#" onclick="navigateTo('sponsor.html')" class="mobile-nav-link">Be a Sponsor</a>
+                <a href="#" onclick="navigateTo('donate.html')" class="mobile-nav-link">Donate</a>
+            </div>
         </div>
     </div>
 
-    <!-- Quick Contact -->
-    <div class="cta-section fade-in-up">
-        <h2>Ready to Join?</h2>
-        <p>Don't wait! Attend our next general meeting or event to become part of the MSOE NSBE family.</p>
-        <div class="cta-buttons">
-            <button class="cta-button primary" onclick="sendEmail()">Send Email</button>
-            <button class="cta-button secondary" onclick="navigateTo('aboutPage.html')">Learn More</button>
+    <!-- Contact Header -->
+    <div class="contact-header">
+        <h2 class="section-title fade-in-up" style="margin-bottom: 1.5rem;">Contact Us</h2>
+        <p class=" fade-in-up">Get in touch with our executive board team</p>
+        <p class=" fade-in-up">Also follow us on Instagram and join our Microsoft Teams channel!</p>
+    </div>
+
+    <!-- Executive Board Section -->
+    <div class="executive-board-section fade-in-up">
+        <div class="executive-board-header">
+            <div class="social-links-header">
+                <a href="https://www.instagram.com/nsbe_msoe" class="social-link-header" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://teams.microsoft.com/l/channel/19%3A2aa1c66b38444a8bac0bc69980975c54%40thread.tacv2/General?groupId=4c374086-a5ed-4811-8524-d3aa0968cf8a&tenantId=4046ceac-fdd3-46c9-ac80-b7c4a49bab70"
+                    class="social-link-header" title="Microsoft Teams">
+                    <i class="fab fa-microsoft"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="executive-board-grid">
+            <!-- President -->
+            <div class="executive-card">
+                <div class="executive-photo">
+                    <img src="images/eboard2025/madinah.jpeg" alt="President Photo">
+                </div>
+                <h4 class="executive-name">Madinah Jones</h4>
+                <p class="executive-position">PRESIDENT</p>
+                <a href="mailto:jonesmn@msoe.edu" class="executive-email">jonesmn@msoe.edu</a>
+                <div class="executive-social">
+                    <a href="#" class="executive-linkedin"
+                        onclick="window.open('https://www.linkedin.com/in/madinah-jones-786124189/', '_blank')">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Vice President -->
+            <div class="executive-card">
+                <div class="executive-photo">
+                    <img src="images/eboard2025/franklin.jpeg" alt="Vice President Photo">
+                </div>
+                <h4 class="executive-name">Franklin Cole</h4>
+                <p class="executive-position">VICE PRESIDENT</p>
+                <a href="mailto:colef@msoe.edu" class="executive-email">colef@msoe.edu</a>
+                <div class="executive-social">
+                    <a href="#" class="executive-linkedin"
+                        onclick="window.open('https://www.linkedin.com/in/colemfranklin/', '_blank')">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Secretary -->
+            <div class="executive-card">
+                <div class="executive-photo">
+                    <img src="images/eboard2025/lexi.jpeg" alt="Secretary Photo">
+                </div>
+                <h4 class="executive-name">Lexi Young</h4>
+                <p class="executive-position">SECRETARY</p>
+                <a href="mailto:youngad@msoe.edu" class="executive-email">youngad@msoe.edu</a>
+                <div class="executive-social">
+                    <a href="#" class="executive-linkedin"
+                        onclick="window.open('https://www.linkedin.com/in/alexis-youngad/', '_blank')">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Treasurer -->
+            <div class="executive-card">
+                <div class="executive-photo">
+                    <img src="images/eboard2025/fabian.jpeg" alt="Treasurer Photo">
+                </div>
+                <h4 class="executive-name">Fabian Hurndon</h4>
+                <p class="executive-position">TREASURER</p>
+                <a href="mailto:hurndonf@msoe.edu" class="executive-email">hurndonf@msoe.edu</a>
+                <div class="executive-social">
+                    <a href="#" class="executive-linkedin"
+                        onclick="window.open('https://www.linkedin.com/in/fabianhurndon/', '_blank')">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Event Coordinator -->
+            <div class="executive-card">
+                <div class="executive-photo">
+                    <img src="images/eboard2025/wilfred.jpeg" alt="Treasurer Photo">
+                </div>
+                <h4 class="executive-name">Wilfred Tapsoba</h4>
+                <p class="executive-position">EVENT COORDINATOR</p>
+                <a href="mailto:tapsobaw@msoe.edu" class="executive-email">tapsobaw@msoe.edu</a>
+                <div class="executive-social">
+                    <a href="#" class="executive-linkedin"
+                        onclick="window.open('https://www.linkedin.com/in/wilfried-tapsoba/', '_blank')">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Social Media Manager -->
+            <div class="executive-card">
+                <div class="executive-photo">
+                    <img src="images/eboard2025/aidan.jpeg" alt="Treasurer Photo">
+                </div>
+                <h4 class="executive-name">Aidan Blackmon</h4>
+                <p class="executive-position">SOCIAL MEDIA MANAGER</p>
+                <a href="mailto:blackmona@msoe.edu" class="executive-email">blackmona@msoe.edu</a>
+                <div class="executive-social">
+                    <a href="#" class="executive-linkedin"
+                        onclick="window.open('https://www.linkedin.com/in/aidan-blackmon-138386312/', '_blank')">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Parliamentarian -->
+            <div class="executive-card">
+                <div class="executive-photo">
+                    <img src="images/eboard2025/njoroge.jpeg" alt="Treasurer Photo">
+                </div>
+                <h4 class="executive-name">Njoroge Kahende</h4>
+                <p class="executive-position">PARLIAMENTARIAN</p>
+                <a href="mailto:kahenden@msoe.edu" class="executive-email">kahenden@msoe.edu</a>
+                <div class="executive-social">
+                    <a href="#" class="executive-linkedin"
+                        onclick="window.open('https://www.linkedin.com/in/njoroge-kahende-411a48304/', '_blank')">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Footer -->
-<footer>
-    <p>&copy; 2025 MSOE NSBE. All Rights Reserved.</p>
-</footer>
+    <!-- Contact Information Section -->
+    <div class="contact-info-section">
+        <div class="contact-info-container">
+            <div class="contact-details">
+                <h3>Get In Touch</h3>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>General Email</strong>
+                        <a href="mailto:colef@msoe.edu" class="executive-email">colef@msoe.edu</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Address</strong>
+                        <p>1025 N Broadway<br>Milwaukee, WI 53202</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-university"></i>
+                    <div>
+                        <strong>Institution</strong>
+                        <p>Milwaukee School of Engineering</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<script>
-// Add fade-in animation to elements as they come into view
-document.addEventListener('DOMContentLoaded', function() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <!-- Logo -->
+            <div class="footer-logo">
+                <img src="images/nsbelogo.png" alt="NSBE Logo" class="footer-logo-img">
+            </div>
 
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
+            <!-- NSBE Title -->
+            <h2 class="footer-nsbe-title">NSBE</h2>
+
+            <!-- School Name -->
+            <p class="footer-school">Milwaukee School of Engineering</p>
+            <!-- Email -->
+            <p class="footer-email"><strong>Email:</strong> colef@msoe.edu</p>
+
+            <div class="executive-board-header">
+                <div class="social-links-header">
+                    <a href="https://www.instagram.com/nsbe_msoe" class="social-link-header" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://teams.microsoft.com/l/channel/19%3A2aa1c66b38444a8bac0bc69980975c54%40thread.tacv2/General?groupId=4c374086-a5ed-4811-8524-d3aa0968cf8a&tenantId=4046ceac-fdd3-46c9-ac80-b7c4a49bab70"
+                        class="social-link-header" title="Microsoft Teams">
+                        <i class="fab fa-microsoft"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2025 MSOE NSBE. All Rights Reserved.</p>
+                <p>Website by MSOE NSBE Chapter</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add fade-in animation to elements as they come into view
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
         });
-    }, observerOptions);
 
-    // Observe all sections
-    document.querySelectorAll('.fade-in-up').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-});
-</script>
+        function toggleMobileDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId + '-dropdown');
+            const toggle = document.querySelector(`[onclick="toggleMobileDropdown('${dropdownId}')"]`);
+            const icon = toggle.querySelector('i');
+
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            icon.style.transform = dropdown.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+    </script>
 </body>
+
 </html>

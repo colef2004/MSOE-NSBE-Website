@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | MSOE NSBE</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/donate.css">
+  <script src="function.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="images/nsbelogo.png">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <div id="nav-bar">
+    <div class="title" onclick="navigateTo('index.html')">
+      <p><img src="images/nsbelogo.png" alt="NSBE Logo" class="nav-logo"> NSBE</p>
+      <p>Milwaukee School of Engineering University</p>
+    </div>
+
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger" onclick="toggleMobileMenu()">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Desktop Navigation -->
+    <div class="nav-menu desktop-nav">
+      <button type="nav-button" onclick="navigateTo('index.html')">Home</button>
+      <button type="nav-button" onclick="navigateTo('table.html')">Points</button>
+      <div class="dropdown">
+        <button class="dropdown-btn" type="nav-button">Events <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-content">
+          <a href="#" onclick="navigateTo('calendar.html')">Calendar</a>
+          <a href="#" onclick="navigateTo('gallery.html')">Gallery</a>
+        </div>
+      </div>
+      <button type="nav-button" onclick="navigateTo('contact.html')">Contact</button>
+      <div class="dropdown">
+        <button class="dropdown-btn" type="nav-button">Support Us <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-content">
+          <a href="#" onclick="navigateTo('sponsor.html')"> Sponsors</a>
+          <a href="#" onclick="navigateTo('donate.html')">Donate</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+      <div class="mobile-nav-content">
+        <a href="#" onclick="navigateTo('index.html')" class="mobile-nav-link">Home</a>
+        <a href="#" onclick="navigateTo('table.html')" class="mobile-nav-link">Points</a>
+        <a href="#" onclick="navigateTo('calendar.html')" class="mobile-nav-link">Events Calendar</a>
+        <a href="#" onclick="navigateTo('gallery.html')" class="mobile-nav-link">Gallery</a>
+        <a href="#" onclick="navigateTo('contact.html')" class="mobile-nav-link">Contact</a>
+        <a href="#" onclick="navigateTo('sponsor.html')" class="mobile-nav-link">Be a Sponsor</a>
+        <a href="#" onclick="navigateTo('donate.html')" class="mobile-nav-link">Donate</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donate Header -->
+  <div class="contact-header">
+    <h2 class="section-title fade-in-up" style="margin-bottom: 1.5rem;">Support MSOE NSBE</h2>
+    <p class="fade-in-up">Help us continue our mission of increasing the number of culturally responsible Black
+      engineers who excel academically, succeed professionally, and positively impact the community.</p>
+  </div>
+
+  <!-- Steps Section -->
+  <div class="executive-board-section fade-in-up">
+    <div class="executive-board-header">
+      <h2 style="color: var(--nsbe-green); font-size: 1.7rem; text-align: center; margin-bottom: 0.5rem;">How to Donate
+        in
+        3 Simple Steps
+      </h2>
+    </div>
+
+    <div class="executive-board-grid" style="grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+      <!-- Steps Content -->
+      <div class="steps-content">
+        <div class="executive-card" style="margin-bottom: 1.5rem; padding: 1.5rem; padding-bottom: 0.3rem;">
+          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+            <div
+              style="background: var(--nsbe-green); color: var(--white); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 1rem; flex-shrink: 0;">
+              1</div>
+            <div>
+              <h4 style="color: var(--nsbe-green); margin-bottom: 0.5rem; font-size: 1.2rem;">Choose Your Donation
+                Frequency</h4>
+              <p style="color: var(--gray-600); margin: 0;">Select whether you'd like to make a one-time donation, or
+                set up monthly or yearly recurring donations to provide ongoing support.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="executive-card" style="margin-bottom: 1.5rem; padding: 1.5rem; padding-bottom: 0.3rem;">
+          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+            <div
+              style="background: var(--nsbe-green); color: var(--white); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 1rem; flex-shrink: 0;">
+              2</div>
+            <div>
+              <h4 style="color: var(--nsbe-green); margin-bottom: 0.5rem; font-size: 1.2rem;">Search for NSBE</h4>
+              <p style="color: var(--gray-600); margin: 0;">In the "Select Funds" section, search for "nsbe" to find the
+                National Society of Black Engineers fund and specify your donation amount.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="executive-card" style="margin-bottom: 2rem; padding: 1.5rem; padding-bottom: 0.3rem;">
+          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+            <div
+              style="background: var(--nsbe-green); color: var(--white); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 1rem; flex-shrink: 0;">
+              3</div>
+            <div>
+              <h4 style="color: var(--nsbe-green); margin-bottom: 0.5rem; font-size: 1.2rem;">Complete Your Donation
+              </h4>
+              <p style="color: var(--gray-600); margin: 0;">Click "Proceed" to securely complete your donation through
+                MSOE's secure payment system and help support our chapter's activities and programs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Donation Image and Button -->
+      <div class="steps-image"
+        style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2rem;">
+        <img src="images/how-to-donate-to-nsbe.png" alt="MSOE Donation Form - How to Donate to NSBE"
+          style="width: 100%; max-width: 700px; box-shadow: var(--shadow-lg);">
+
+        <!-- Donate Button -->
+        <a href="https://give.msoe.edu/g/donation" target="_blank" style="
+          background: linear-gradient(135deg, var(--nsbe-green) 0%, var(--dark-green) 100%);
+          color: var(--white);
+          padding: 1.2rem 3rem;
+          font-size: 1.3rem;
+          font-weight: 700;
+          text-decoration: none;
+          display: inline-block;
+          transition: all 0.3s ease;
+          box-shadow: 0 8px 25px rgba(18, 102, 59, 0.3);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          border: 3px solid transparent;
+          position: relative;
+          overflow: hidden;
+        " onmouseover="this.style.transform='translateY(-1px) scale(1.01)'; this.style.boxShadow='0 12px 35px rgba(18, 102, 59, 0.4)'; this.style.borderColor='var(--nsbe-gold)';"
+          onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 8px 25px rgba(18, 102, 59, 0.3)'; this.style.borderColor='transparent';">
+          <i class="fas fa-heart" style="margin-right: 0.8rem; color: #ff6b6b;"></i>
+          Donate Now
+          <i class="fas fa-arrow-right" style="margin-left: 0.8rem;"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="images/nsbelogo.png" alt="NSBE Logo" class="footer-logo-img">
+      </div>
+
+      <!-- NSBE Title -->
+      <h2 class="footer-nsbe-title">NSBE</h2>
+
+      <!-- School Name -->
+      <p class="footer-school">Milwaukee School of Engineering</p>
+      <!-- Email -->
+      <p class="footer-email"><strong>Email:</strong> colef@msoe.edu</p>
+
+      <div class="executive-board-header">
+        <div class="social-links-header">
+          <a href="https://www.instagram.com/nsbe_msoe" class="social-link-header" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://teams.microsoft.com/l/channel/19%3A2aa1c66b38444a8bac0bc69980975c54%40thread.tacv2/General?groupId=4c374086-a5ed-4811-8524-d3aa0968cf8a&tenantId=4046ceac-fdd3-46c9-ac80-b7c4a49bab70"
+            class="social-link-header" title="Microsoft Teams">
+            <i class="fab fa-microsoft"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p>&copy; 2025 MSOE NSBE. All Rights Reserved.</p>
+        <p>Website by MSOE NSBE Chapter</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Add fade-in animation to elements as they come into view
+    document.addEventListener('DOMContentLoaded', function () {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections
+      document.querySelectorAll('.fade-in-up').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+      });
+    });
+
+    function toggleMobileDropdown(dropdownId) {
+      const dropdown = document.getElementById(dropdownId + '-dropdown');
+      const toggle = document.querySelector(`[onclick="toggleMobileDropdown('${dropdownId}')"]`);
+      const icon = toggle.querySelector('i');
+
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      icon.style.transform = dropdown.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+  </script>
+</body>
+
+</html>

@@ -1,40 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar | MSOE NSBE</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/calendar.css">
     <script src="function.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="images/nsbelogo.png">
 </head>
+
 <body>
-<!-- Navigation Bar -->
-<div id="topButtons">
-    <div class="title">
-        <p>NSBE</p>
-        <p>Milwaukee School of Engineering University</p>
-    </div>
-    <div>
-        <button type="button" onclick="navigateTo('index.html')">Home</button>
-        <button type="button" onclick="navigateTo('table.html')">Points</button>
-        <button type="button" onclick="navigateTo('aboutPage.html')">About</button>
-        <button type="button" onclick="navigateTo('calendar.html')">Calendar</button>
-    </div>
-</div>
+    <!-- Navigation Bar -->
+    <div id="nav-bar">
+        <div class="title" onclick="navigateTo('index.html')">
+            <p><img src="images/nsbelogo.png" alt="NSBE Logo" class="nav-logo"> NSBE</p>
+            <p>Milwaukee School of Engineering University</p>
+        </div>
 
-<div class="container">
-    <div class="under-construction-container">
-        <div class="construction-icon">🚧</div>
-        <div class="under-construction-message">Calendar Page Under Construction</div>
-        <div class="under-construction-sub">We're working hard to bring you our event calendar. Check back soon!</div>
-    </div>
-</div>
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger" onclick="toggleMobileMenu()">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
 
-<!-- Footer -->
-<footer>
-    <p>&copy; 2025 MSOE NSBE. All Rights Reserved.</p>
-</footer>
+        <!-- Desktop Navigation -->
+        <div class="nav-menu desktop-nav">
+            <button type="nav-button" onclick="navigateTo('index.html')">Home</button>
+            <button type="nav-button" onclick="navigateTo('table.html')">Points</button>
+            <div class="dropdown">
+                <button class="dropdown-btn" type="nav-button">Events <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="navigateTo('calendar.html')">Calendar</a>
+                    <a href="#" onclick="navigateTo('gallery.html')">Gallery</a>
+                </div>
+            </div>
+            <button type="nav-button" onclick="navigateTo('contact.html')">Contact</button>
+            <div class="dropdown">
+                <button class="dropdown-btn" type="nav-button">Support Us <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="navigateTo('sponsor.html')"> Sponsors</a>
+                    <a href="#" onclick="navigateTo('donate.html')">Donate</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav" id="mobile-nav">
+            <div class="mobile-nav-content">
+                <a href="#" onclick="navigateTo('index.html')" class="mobile-nav-link">Home</a>
+                <a href="#" onclick="navigateTo('table.html')" class="mobile-nav-link">Points</a>
+                <a href="#" onclick="navigateTo('calendar.html')" class="mobile-nav-link">Events Calendar</a>
+                <a href="#" onclick="navigateTo('gallery.html')" class="mobile-nav-link">Gallery</a>
+                <a href="#" onclick="navigateTo('contact.html')" class="mobile-nav-link">Contact</a>
+                <a href="#" onclick="navigateTo('sponsor.html')" class="mobile-nav-link">Be a Sponsor</a>
+                <a href="#" onclick="navigateTo('donate.html')" class="mobile-nav-link">Donate</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="events-header">
+        <h2 class="section-title fade-in-up" style="margin-bottom: 1.5rem;">Events Calendar</h2>
+        <p class="fade-in-up" style="text-align: center; margin-bottom: 2rem; color: var(--gray-600);">Stay updated with
+            all our upcoming events, meetings, and activities</p>
+
+        <!-- Event Type Cards -->
+        <div class="event-type-cards fade-in-up">
+            <!-- General Meetings -->
+            <div class="event-type-card">
+                <h4>General Meetings</h4>
+            </div>
+
+            <!-- Professional Development -->
+            <div class="event-type-card">
+                <h4>Professional Development</h4>
+            </div>
+
+            <!-- Social Events -->
+            <div class="event-type-card">
+                <h4>Social Events</h4>
+            </div>
+
+            <!-- Conferences -->
+            <div class="event-type-card">
+                <h4>Conferences</h4>
+            </div>
+        </div>
+    </div>
+    <!-- Simple Events Section -->
+    <div class="events-section fade-in-up">
+        <div class="events-header">
+            <div class="events-header-content">
+                <p class="events-instruction">View our upcoming events and activities!</p>
+                <p class="academic-year">Fall Semester 2025</p>
+            </div>
+        </div>
+        <div class="events-divider"></div>
+
+        <div class="events-list">
+            <!-- Event 1 -->
+            <div class="event-item">
+                <div class="event-image">
+                    <img src="images/first-general-meeting-2025-2026.jpg" alt="General Meeting">
+                </div>
+                <div class="event-info">
+                    <h3 class="event-title">First General Meeting - Fall 2025</h3>
+                    <div class="event-content-container">
+                        <div class="event-details">
+                            <div class="event-detail">
+                                <i class="fas fa-calendar"></i>
+                                <span>September 8, 2025</span>
+                            </div>
+                            <div class="event-detail">
+                                <i class="fas fa-clock"></i>
+                                <span>Monday: 6:00pm - 7:00pm</span>
+                            </div>
+                            <div class="event-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>DH 229</span>
+                            </div>
+                        </div>
+                        <div class="event-description-column">
+                            <p class="event-description">Join us for our first general meeting of the fall semester!
+                                Come learn about NSBE, connect with peers and hear what we have in store for the
+                                year ahead.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="event-item">
+                <div class="event-image">
+                    <img src="images/city-wide-meetup-fall2025.jpg" alt="General Meeting">
+                </div>
+                <div class="event-info">
+                    <h3 class="event-title">City Wide Meet Up - Fall 2025 Edition</h3>
+                    <div class="event-content-container">
+                        <div class="event-details">
+                            <div class="event-detail">
+                                <i class="fas fa-calendar"></i>
+                                <span>September 20, 2025</span>
+                            </div>
+                            <div class="event-detail">
+                                <i class="fas fa-clock"></i>
+                                <span>Saturday: 9am - 2pm</span>
+                            </div>
+                            <div class="event-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>UW-Milwaukee - Lubar Entrepreneurship Center, Room
+                                    105</span>
+                            </div>
+                        </div>
+                        <div class="event-description-column">
+                            <p class="event-description">Join us for our city wide meet up! This is a great opportunity
+                                to network with other NSBE chapters and professionals in the Milwaukee area.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="events-divider"></div>
+    </div>
+
+    <!-- Concluded Events Section -->
+    <div class="events-section fade-in-up">
+        <div class="events-header">
+            <div class="events-header-content">
+                <p class="events-instruction">Past Events</p>
+            </div>
+        </div>
+        <div class="events-divider"></div>
+
+        <div class="events-list">
+            <!-- Concluded Event 1 -->
+            <div class="event-item concluded-event">
+                <div class="event-image">
+                    <img src="images/involvement-fair-2025.png" alt="NSBE Conference">
+                </div>
+                <div class="event-info">
+                    <h3 class="event-title">Involvement Fair</h3>
+                    <div class="event-content-container">
+                        <div class="event-details">
+                            <div class="event-detail">
+                                <i class="fas fa-calendar"></i>
+                                <span>September 5, 2025</span>
+                            </div>
+                            <div class="event-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Completed</span>
+                            </div>
+                            <div class="event-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Kern Fieldhouse</span>
+                            </div>
+                        </div>
+                        <div class="event-description-column">
+                            <p class="event-description">Come learn about NSBE and all of our events & opportunities
+                                and sign up to become a member!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <!-- Logo -->
+            <div class="footer-logo">
+                <img src="images/nsbelogo.png" alt="NSBE Logo" class="footer-logo-img">
+            </div>
+
+            <!-- NSBE Title -->
+            <h2 class="footer-nsbe-title">NSBE</h2>
+
+            <!-- School Name -->
+            <p class="footer-school">Milwaukee School of Engineering</p>
+            <!-- Email -->
+            <p class="footer-email"><strong>Email:</strong> colef@msoe.edu</p>
+
+            <div class="executive-board-header">
+                <div class="social-links-header">
+                    <a href="https://www.instagram.com/nsbe_msoe" class="social-link-header" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://teams.microsoft.com/l/channel/19%3A2aa1c66b38444a8bac0bc69980975c54%40thread.tacv2/General?groupId=4c374086-a5ed-4811-8524-d3aa0968cf8a&tenantId=4046ceac-fdd3-46c9-ac80-b7c4a49bab70"
+                        class="social-link-header" title="Microsoft Teams">
+                        <i class="fab fa-microsoft"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2025 MSOE NSBE. All Rights Reserved.</p>
+                <p>Website by MSOE NSBE Chapter</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple fade-in animation
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        function toggleMobileDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId + '-dropdown');
+            const toggle = document.querySelector(`[onclick="toggleMobileDropdown('${dropdownId}')"]`);
+            const icon = toggle.querySelector('i');
+
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            icon.style.transform = dropdown.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+    </script>
 </body>
-</html> 
+
+</html>
