@@ -98,15 +98,20 @@ function initializeFadeAnimations() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                // Stop observing this element once it's animated
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
     // this makes all the fade-in-up things start invisible and then fade in
     document.querySelectorAll('.fade-in-up').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        // Only set initial state if not already set
+        if (!el.style.opacity) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        }
         observer.observe(el);
     });
 }
