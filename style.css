@@ -2831,16 +2831,8 @@ footer p {
     font-weight: 500;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    #nav-bar {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-        backdrop-filter: blur(25px);
-    }
-
+/* Hamburger Menu Breakpoint */
+@media (max-width: 1050px) {
     .hamburger {
         display: flex;
     }
@@ -2851,6 +2843,17 @@ footer p {
 
     .mobile-nav {
         display: block;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #nav-bar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        backdrop-filter: blur(25px);
     }
 
     #nav-bar .title {
