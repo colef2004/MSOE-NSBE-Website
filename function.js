@@ -156,7 +156,7 @@ function initializeMobileMenu() {
 
     // if you make the window big again, close the mobile menu
     window.addEventListener('resize', function () {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1000) {
             const mobileNav = document.getElementById('mobile-nav');
             const hamburger = document.querySelector('.hamburger');
 
