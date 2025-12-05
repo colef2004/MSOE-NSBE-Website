@@ -17,6 +17,16 @@ let totalSlides;
 
 // this shows the slide you want and makes it look active
 function showSlide(index) {
+    // make sure slides and indicators exist
+    if (!slides || !indicators || slides.length === 0 || indicators.length === 0) {
+        return;
+    }
+
+    // make sure the index is valid
+    if (index < 0 || index >= slides.length) {
+        return;
+    }
+
     // take off the "active" thing from all slides and dots
     slides.forEach(slide => slide.classList.remove('active'));
     indicators.forEach(indicator => indicator.classList.remove('active'));
@@ -98,7 +108,6 @@ function initializeFadeAnimations() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
-                // Stop observing this element once it's animated
                 observer.unobserve(entry.target);
             }
         });
@@ -106,7 +115,6 @@ function initializeFadeAnimations() {
 
     // this makes all the fade-in-up things start invisible and then fade in
     document.querySelectorAll('.fade-in-up').forEach(el => {
-        // Only set initial state if not already set
         if (!el.style.opacity) {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
@@ -174,6 +182,14 @@ function initializeCarousel() {
     indicators = document.querySelectorAll('.indicator');
     totalSlides = slides.length;
 
+    // make sure the first slide is shown
+    showSlide(0);
+
+    // clear any existing interval first
+    if (autoAdvanceInterval) {
+        clearInterval(autoAdvanceInterval);
+    }
+
     // Set up auto-advance every 5 seconds
     autoAdvanceInterval = setInterval(autoAdvance, 5000);
 
@@ -181,10 +197,16 @@ function initializeCarousel() {
     const carousel = document.querySelector('.hero-carousel');
     if (carousel) {
         carousel.addEventListener('mouseenter', () => {
-            clearInterval(autoAdvanceInterval);
+            if (autoAdvanceInterval) {
+                clearInterval(autoAdvanceInterval);
+            }
         });
 
         carousel.addEventListener('mouseleave', () => {
+            // clear any existing interval before creating a new one
+            if (autoAdvanceInterval) {
+                clearInterval(autoAdvanceInterval);
+            }
             autoAdvanceInterval = setInterval(autoAdvance, 5000);
         });
     }
